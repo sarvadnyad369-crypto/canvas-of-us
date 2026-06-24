@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Canvas of Us 🌸</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Cormorant+Garamond&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins;
+  background:linear-gradient(135deg,#F8F3E8,#fffaf2);
+}
+
+/* HEADER */
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  text-align:center;
+  padding:15px;
+  font-size:26px;
+  font-family:"Cormorant Garamond";
+  color:#C8A96B;
+  background:rgba(255,255,255,0.6);
+}
+
+/* LOGIN */
+.lock{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+input{
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  width:200px;
+  text-align:center;
+}
+
+button{
+  padding:10px 20px;
+  margin-top:10px;
+  border:none;
+  background:#C8A96B;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.hidden{display:none;}
+
+/* DASHBOARD */
+.main{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:30px;
+  max-width:1200px;
+  margin:0 auto;
+  padding:100px 20px 40px;
+}
+
+/* LEFT */
+.left{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.slideshow img{
+  width:100%;
+  max-width:550px;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px;
+}
+
+.gallery img{
+  width:75px;
+  height:75px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* RIGHT NOTE */
+.right{
+  display:flex;
+  justify-content:center;
+}
+
+.scroll{
+  width:100%;
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(12px);
+  padding:25px;
+  border-radius:20px;
+  font-family:"Cormorant Garamond";
+  font-size:18px;
+  line-height:1.7;
+}
+
+/* SECRET */
+.secretPage{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(255,250,240,0.95);
+  justify-content:center;
+  align-items:center;
+}
+
+.paper{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  max-width:500px;
+  text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .main{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">🌸 Canvas of Us 🌸</div>
+
+<!-- LOGIN -->
+<div id="lock" class="lock">
+  <div>
+    <h2>💖 Enter Code</h2>
+    <input id="pass" type="password">
+    <br>
+    <button onclick="check()">Unlock 💌</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="main" class="hidden">
+
+<div class="main">
+
+  <!-- LEFT -->
+  <div class="left">
+
+    <div class="slideshow">
+      <img id="slide">
+    </div>
+
+    <div class="gallery">
+      <img src="photos/1.png" onclick="openImg(0)">
+      <img src="photos/2.png" onclick="openImg(1)">
+      <img src="photos/3.png" onclick="openImg(2)">
+      <img src="photos/4.png" onclick="openImg(3)">
+      <img src="photos/5.png" onclick="openImg(4)">
+      <img src="photos/6.png" onclick="openImg(5)">
+      <img src="photos/7.png" onclick="openImg(6)">
+      <img src="photos/8.png" onclick="openImg(7)">
+    </div>
+
+  </div>
+
+  <!-- RIGHT NOTE (UNCHANGED) -->
+  <div class="right">
+    <div class="scroll">
+
+      💛 My love,<br><br>
+
+      Maji Eshwari , shrav tuja sathi hamasha aahe gaa<br>
+      tujya premat ..tujaa sathi ..aple saglee changle diwass...<br>
+      apli masti apli ..saglee kahii ...Ranu thankyou very much <br>
+      hamasha maja sathi rahana sathii all for you maji pilluu<br>
+      ya madhe aple most of the changle divas recreat kele aahee<br>
+      manjee samju shakshil tuu ..i hopee tula he avdel 💖
+
+      <br><br>
+
+      <button onclick="openSecret()">Secret 💌</button>
+
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<!-- SECRET (UNCHANGED) -->
+<div id="secret" class="secretPage">
+  <div class="paper">
+
+    💌 If you are reading this…<br><br>
+
+    🌸 I never planned to fall this deeply,<br>
+    💛 but you became my favorite place in the world 🌸<br><br>
+
+    💛 I don’t want perfect days… I just want days with you 💛<br><br>
+
+    me Sarvadnya aahe tuja shrav...soo hee maja kadna ek chotasa <br>
+    gift aahe tuja sathii thoda sa special for my cutie pi...maji rani...<br>
+    i hope 1701 kee best person banu shakel tuja jevnatla.....<br><br>
+
+    💖✨ I LOVE YOU ESHUWARI ✨💖<br><br>
+
+    <button onclick="closeSecret()">Close</button>
+
+  </div>
+</div>
+
+<script>
+
+/* LOGIN */
+const password="1701";
+
+function check(){
+  if(pass.value===password){
+    lock.style.display="none";
+    main.classList.remove("hidden");
+    show();
+  }
+}
+
+/* IMAGES */
+const images=[
+"photos/1.png","photos/2.png","photos/3.png","photos/4.png",
+"photos/5.png","photos/6.png","photos/7.png","photos/8.png"
+];
+
+let i=0;
+
+function show(){
+  slide.src=images[i];
+}
+
+function openImg(index){
+  i=index;
+  show();
+}
+
+/* SECRET */
+function openSecret(){
+  document.getElementById("secret").style.display="flex";
+}
+
+function closeSecret(){
+  document.getElementById("secret").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
