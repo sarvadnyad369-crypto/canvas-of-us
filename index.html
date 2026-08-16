@@ -45,7 +45,7 @@ button:active{
 }
 
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header{
     position:fixed;
@@ -63,7 +63,7 @@ button:active{
 }
 
 
-/* LOGIN */
+/* ================= LOGIN ================= */
 
 .lock{
     min-height:100vh;
@@ -108,7 +108,7 @@ button:active{
 }
 
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 
 .navigation{
     padding:90px 15px 15px;
@@ -119,7 +119,7 @@ button:active{
 }
 
 
-/* MEMORIES */
+/* ================= MEMORIES ================= */
 
 .main{
     max-width:1200px;
@@ -183,7 +183,7 @@ button:active{
 }
 
 
-/* SECRET */
+/* ================= SECRET ================= */
 
 .secretPage{
     display:none;
@@ -210,7 +210,7 @@ button:active{
 }
 
 
-/* APOLOGY */
+/* ================= APOLOGY ================= */
 
 #apologyPage{
     display:none;
@@ -363,7 +363,7 @@ button:active{
 }
 
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
@@ -399,23 +399,23 @@ button:active{
         right:6px;
         bottom:6px;
     }
+
 }
 
 </style>
 </head>
 
-
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <div class="header">
     🌸 Canvas of Us 🌸
 </div>
 
 
-<!-- LOGIN -->
+<!-- ================= LOGIN ================= -->
 
 <div id="lock" class="lock">
 
@@ -444,10 +444,9 @@ button:active{
 </div>
 
 
-<!-- MAIN -->
+<!-- ================= MAIN ================= -->
 
 <div id="main" class="hidden">
-
 
     <!-- NAVIGATION -->
 
@@ -464,7 +463,7 @@ button:active{
     </div>
 
 
-    <!-- MEMORIES -->
+    <!-- ================= MEMORIES ================= -->
 
     <div id="memoriesPage">
 
@@ -485,21 +484,37 @@ button:active{
 
                 <div class="gallery">
 
-                    <img src="photos/1.png" onclick="openImg(0)" alt="Memory 1">
+                    <img src="photos/1.png"
+                         onclick="openImg(0)"
+                         alt="Memory 1">
 
-                    <img src="photos/2.png" onclick="openImg(1)" alt="Memory 2">
+                    <img src="photos/2.png"
+                         onclick="openImg(1)"
+                         alt="Memory 2">
 
-                    <img src="photos/3.png" onclick="openImg(2)" alt="Memory 3">
+                    <img src="photos/3.png"
+                         onclick="openImg(2)"
+                         alt="Memory 3">
 
-                    <img src="photos/4.png" onclick="openImg(3)" alt="Memory 4">
+                    <img src="photos/4.png"
+                         onclick="openImg(3)"
+                         alt="Memory 4">
 
-                    <img src="photos/5.png" onclick="openImg(4)" alt="Memory 5">
+                    <img src="photos/5.png"
+                         onclick="openImg(4)"
+                         alt="Memory 5">
 
-                    <img src="photos/6.png" onclick="openImg(5)" alt="Memory 6">
+                    <img src="photos/6.png"
+                         onclick="openImg(5)"
+                         alt="Memory 6">
 
-                    <img src="photos/7.png" onclick="openImg(6)" alt="Memory 7">
+                    <img src="photos/7.png"
+                         onclick="openImg(6)"
+                         alt="Memory 7">
 
-                    <img src="photos/8.png" onclick="openImg(7)" alt="Memory 8">
+                    <img src="photos/8.png"
+                         onclick="openImg(7)"
+                         alt="Memory 8">
 
                 </div>
 
@@ -549,7 +564,7 @@ button:active{
 </div>
 
 
-<!-- SECRET -->
+<!-- ================= SECRET ================= -->
 
 <div id="secret" class="secretPage">
 
@@ -592,7 +607,7 @@ button:active{
 </div>
 
 
-<!-- APOLOGY -->
+<!-- ================= APOLOGY ================= -->
 
 <div id="apologyPage">
 
@@ -647,7 +662,7 @@ button:active{
         <div class="apologyLayout">
 
 
-            <!-- APOLOGY TEXT -->
+            <!-- ================= APOLOGY TEXT ================= -->
 
             <div class="apologyText">
 
@@ -826,7 +841,7 @@ button:active{
             </div>
 
 
-            <!-- IMAGE -->
+            <!-- ================= APOLOGY IMAGE ================= -->
 
             <div class="apologyArt">
 
@@ -853,31 +868,24 @@ button:active{
 </div>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-/* =====================================================
-   PASSWORD
-===================================================== */
+/* ================= PASSWORD ================= */
 
 const SITE_PASSWORD = "170123";
 
 
-/* =====================================================
-   ELEMENTS
-===================================================== */
+/* ================= ELEMENTS ================= */
 
 const lockPage = document.getElementById("lock");
-
 const mainPage = document.getElementById("main");
-
 const passwordInput = document.getElementById("pass");
-
 const unlockButton = document.getElementById("unlockButton");
-
 const loginError = document.getElementById("loginError");
 
 const memoriesPage = document.getElementById("memoriesPage");
-
 const apologyPage = document.getElementById("apologyPage");
 
 const secretPage = document.getElementById("secret");
@@ -885,9 +893,7 @@ const secretPage = document.getElementById("secret");
 const slide = document.getElementById("slide");
 
 
-/* =====================================================
-   LOGIN
-===================================================== */
+/* ================= LOGIN ================= */
 
 function login(){
 
@@ -906,7 +912,9 @@ function login(){
 
         loginError.textContent = "";
 
-        slide.src = "photos/1.png";
+        currentImage = 0;
+
+        showImage();
 
         window.scrollTo(0,0);
 
@@ -924,7 +932,7 @@ function login(){
 }
 
 
-/* BUTTON LOGIN */
+/* LOGIN BUTTON */
 
 unlockButton.addEventListener(
     "click",
@@ -948,12 +956,9 @@ passwordInput.addEventListener(
 );
 
 
-/* =====================================================
-   PHOTOS
-===================================================== */
+/* ================= PHOTOS ================= */
 
 const images = [
-
     "photos/1.png",
     "photos/2.png",
     "photos/3.png",
@@ -962,69 +967,335 @@ const images = [
     "photos/6.png",
     "photos/7.png",
     "photos/8.png"
-
 ];
 
 let currentImage = 0;
 
 
-function show(){
+/* SHOW IMAGE */
 
-    slide.src =
-        images[currentImage];
+function showImage(){
+
+    slide.src = images[currentImage];
 
 }
 
+
+/* OPEN IMAGE */
 
 function openImg(index){
 
-    currentImage = index;
+    if(index >= 0 && index < images.length){
 
-    show();
+        currentImage = index;
+
+        showImage();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
 
 }
 
 
-/* =====================================================
-   SECRET
-===================================================== */
+/* AUTOMATIC SLIDESHOW */
 
-document.getElementById(
-    "secretButton"
-).addEventListener(
-    "click",
-    function(){
+setInterval(function(){
 
-        secretPage.style.display = "flex";
+    if(
+        !mainPage.classList.contains("hidden") &&
+        apologyPage.style.display !== "block"
+    ){
 
-    }
-);
+        currentImage++;
 
+        if(currentImage >= images.length){
 
-document.getElementById(
-    "closeSecretButton"
-).addEventListener(
-    "click",
-    function(){
+            currentImage = 0;
 
-        secretPage.style.display = "none";
+        }
+
+        showImage();
 
     }
-);
+
+},5000);
 
 
-/* =====================================================
-   PAGE: MEMORIES
-===================================================== */
+/* ================= MEMORIES BUTTON ================= */
 
-function showMemories(){
-
-    stopAutoScroll();
-
-    mainPage.classList.remove("hidden");
+document.getElementById("memoriesButton")
+.addEventListener("click",function(){
 
     memoriesPage.style.display = "block";
 
     apologyPage.style.display = "none";
 
-    window.
+    stopApologyScroll();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* ================= APOLOGY BUTTON ================= */
+
+document.getElementById("apologyButton")
+.addEventListener("click",function(){
+
+    memoriesPage.style.display = "none";
+
+    apologyPage.style.display = "block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    setTimeout(function(){
+
+        startApologyScroll();
+
+    },400);
+
+});
+
+
+/* ================= SECRET ================= */
+
+document.getElementById("secretButton")
+.addEventListener("click",function(){
+
+    secretPage.style.display = "flex";
+
+});
+
+
+document.getElementById("closeSecretButton")
+.addEventListener("click",function(){
+
+    secretPage.style.display = "none";
+
+});
+
+
+/* ================= APOLOGY AUTO SCROLL ================= */
+
+let autoScroll = true;
+
+let scrollSpeed = 0.35;
+
+let scrollAnimation = null;
+
+
+function startApologyScroll(){
+
+    stopApologyScroll();
+
+    if(!autoScroll){
+
+        return;
+
+    }
+
+    function scroll(){
+
+        if(
+            apologyPage.style.display === "block" &&
+            autoScroll
+        ){
+
+            const maxScroll =
+                document.documentElement.scrollHeight -
+                window.innerHeight;
+
+            if(window.scrollY < maxScroll){
+
+                window.scrollBy(0,scrollSpeed);
+
+                updateProgress();
+
+                scrollAnimation =
+                    requestAnimationFrame(scroll);
+
+            }else{
+
+                autoScroll = false;
+
+                document.getElementById("autoButton")
+                    .textContent = "▶️ Play";
+
+                updateProgress();
+
+            }
+
+        }
+
+    }
+
+    scrollAnimation =
+        requestAnimationFrame(scroll);
+
+}
+
+
+function stopApologyScroll(){
+
+    if(scrollAnimation){
+
+        cancelAnimationFrame(scrollAnimation);
+
+        scrollAnimation = null;
+
+    }
+
+}
+
+
+/* ================= AUTO BUTTON ================= */
+
+document.getElementById("autoButton")
+.addEventListener("click",function(){
+
+    autoScroll = !autoScroll;
+
+    if(autoScroll){
+
+        this.textContent = "⏸ Pause";
+
+        startApologyScroll();
+
+    }else{
+
+        this.textContent = "▶️ Play";
+
+        stopApologyScroll();
+
+    }
+
+});
+
+
+/* ================= RESTART ================= */
+
+document.getElementById("restartButton")
+.addEventListener("click",function(){
+
+    autoScroll = true;
+
+    document.getElementById("autoButton")
+        .textContent = "⏸ Pause";
+
+    stopApologyScroll();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    setTimeout(function(){
+
+        startApologyScroll();
+
+    },600);
+
+});
+
+
+/* ================= TOP ================= */
+
+document.getElementById("topButton")
+.addEventListener("click",function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* ================= BACK TO MEMORIES ================= */
+
+document.getElementById("backButton")
+.addEventListener("click",function(){
+
+    apologyPage.style.display = "none";
+
+    memoriesPage.style.display = "block";
+
+    stopApologyScroll();
+
+    autoScroll = true;
+
+    document.getElementById("autoButton")
+        .textContent = "⏸ Pause";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* ================= PROGRESS BAR ================= */
+
+function updateProgress(){
+
+    const scrollTop =
+        window.scrollY;
+
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    let percentage = 0;
+
+    if(documentHeight > 0){
+
+        percentage =
+            (scrollTop / documentHeight) * 100;
+
+    }
+
+    document.getElementById(
+        "apologyProgress"
+    ).style.width =
+        percentage + "%";
+
+}
+
+
+/* ================= SCROLL LISTENER ================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(
+            apologyPage.style.display === "block"
+        ){
+
+            updateProgress();
+
+        }
+
+    }
+);
+
+
+/* ================= INITIAL IMAGE ================= */
+
+showImage();
+
+</script>
+
+</body>
+</html>
