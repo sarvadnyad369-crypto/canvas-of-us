@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+      maximum-scale=1.0,user-scalable=no">
 
 <title>Canvas of Us 🌸</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
 <style>
 
@@ -23,6 +26,7 @@ body{
     font-family:Poppins,sans-serif;
     background:linear-gradient(135deg,#F8F3E8,#fffaf2);
     color:#4a3825;
+    overflow-x:hidden;
 }
 
 button{
@@ -54,11 +58,14 @@ button:active{
     width:100%;
     padding:14px;
     text-align:center;
+
     font-family:"Cormorant Garamond",serif;
     font-size:27px;
     color:#C8A96B;
-    background:rgba(255,255,255,.85);
+
+    background:rgba(255,255,255,.88);
     backdrop-filter:blur(10px);
+
     z-index:1000;
 }
 
@@ -67,24 +74,33 @@ button:active{
 
 .lock{
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     padding:20px;
 }
 
 .loginBox{
     width:100%;
     max-width:350px;
+
     padding:35px 25px;
+
     text-align:center;
-    background:rgba(255,255,255,.8);
+
+    background:rgba(255,255,255,.82);
+
     border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.12);
 }
 
 .loginBox h2{
     margin-top:0;
+
     font-family:"Cormorant Garamond",serif;
     font-size:32px;
 }
@@ -92,18 +108,25 @@ button:active{
 #pass{
     width:220px;
     max-width:100%;
+
     padding:13px;
+
     border:1px solid #ddd;
     border-radius:10px;
+
     outline:none;
+
     text-align:center;
+
     font-size:17px;
 }
 
 #loginError{
     min-height:22px;
     margin-top:12px;
+
     color:#a33;
+
     font-size:14px;
 }
 
@@ -112,9 +135,12 @@ button:active{
 
 .navigation{
     padding:90px 15px 15px;
+
     display:flex;
     justify-content:center;
+
     gap:10px;
+
     flex-wrap:wrap;
 }
 
@@ -124,9 +150,13 @@ button:active{
 .main{
     max-width:1200px;
     margin:auto;
+
     padding:20px;
+
     display:grid;
+
     grid-template-columns:1.2fr 1fr;
+
     gap:30px;
 }
 
@@ -143,26 +173,38 @@ button:active{
 
 .slideshow img{
     display:block;
+
     width:100%;
+
     aspect-ratio:4/3;
+
     object-fit:cover;
+
     border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
 }
 
 .gallery{
     display:flex;
     flex-wrap:wrap;
+
     justify-content:center;
+
     gap:10px;
+
     margin-top:15px;
 }
 
 .gallery img{
     width:75px;
     height:75px;
+
     object-fit:cover;
+
     border-radius:10px;
+
     cursor:pointer;
 }
 
@@ -173,12 +215,19 @@ button:active{
 
 .scrollNote{
     width:100%;
+
     padding:30px;
+
     background:rgba(255,255,255,.6);
+
     backdrop-filter:blur(12px);
+
     border-radius:20px;
+
     font-family:"Cormorant Garamond",serif;
+
     font-size:20px;
+
     line-height:1.75;
 }
 
@@ -187,93 +236,190 @@ button:active{
 
 .secretPage{
     display:none;
+
     position:fixed;
+
     inset:0;
+
     z-index:2000;
+
     background:rgba(255,250,240,.97);
+
     justify-content:center;
+
     align-items:center;
+
     padding:20px;
 }
 
 .paper{
     width:100%;
+
     max-width:550px;
+
     padding:35px;
+
     background:white;
+
     border-radius:20px;
+
     text-align:center;
+
     font-family:"Cormorant Garamond",serif;
+
     font-size:20px;
+
     line-height:1.7;
-    box-shadow:0 20px 60px rgba(0,0,0,.2);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.2);
+
+    max-height:85vh;
+
+    overflow-y:auto;
 }
 
 
-/* ================= APOLOGY ================= */
+/* =====================================================
+   APOLOGY PAGE
+===================================================== */
 
 #apologyPage{
+
     display:none;
+
     min-height:100vh;
-    padding:100px 15px 70px;
+
+    padding:105px 15px 80px;
+
     background:
-        radial-gradient(circle at top,#5b3d25,#28180e 65%,#100a06);
+        radial-gradient(
+            circle at top,
+            #5b3d25,
+            #28180e 65%,
+            #100a06
+        );
+
     color:#3b2414;
+
+    /* IMPORTANT:
+       Allows normal finger scrolling */
+    touch-action:pan-y;
 }
 
+
+/* ================= PROGRESS ================= */
+
 .apologyProgress{
+
     position:fixed;
+
     top:0;
     left:0;
+
     height:5px;
+
     width:0;
+
     background:#e4bd76;
+
     z-index:3000;
 }
 
+
+/* ================= CONTROLS ================= */
+
 .apologyControls{
+
     position:fixed;
-    right:10px;
-    bottom:10px;
+
+    right:8px;
+    bottom:8px;
+
     z-index:2500;
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:6px;
+
     justify-content:flex-end;
 }
 
 .apologyControls button{
+
     padding:9px 12px;
+
     background:#633b1c;
+
     font-size:12px;
 }
 
+
+/* ================= PARCHMENT ================= */
+
 .parchment{
+
     position:relative;
+
     max-width:1100px;
+
     margin:auto;
+
     padding:60px 55px;
+
     background:
-        radial-gradient(circle at 15% 15%,rgba(255,255,255,.2),transparent 25%),
-        radial-gradient(circle at 85% 75%,rgba(90,45,10,.15),transparent 30%),
+
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,255,255,.2),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(90,45,10,.15),
+            transparent 30%
+        ),
+
         #d8b77c;
+
     border:10px solid #95652f;
+
     border-radius:25px;
+
     box-shadow:
+
         0 25px 70px rgba(0,0,0,.65),
+
         inset 0 0 45px rgba(78,40,12,.35);
 }
 
 .parchment:before,
 .parchment:after{
+
     content:"";
+
     position:absolute;
+
     left:-25px;
     right:-25px;
+
     height:45px;
-    background:linear-gradient(to bottom,#70471f,#c59658,#8a5a28);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #70471f,
+            #c59658,
+            #8a5a28
+        );
+
     border-radius:50%;
-    box-shadow:0 5px 12px rgba(0,0,0,.4);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.4);
 }
 
 .parchment:before{
@@ -284,6 +430,9 @@ button:active{
     bottom:-27px;
 }
 
+
+/* ================= TITLE ================= */
+
 .apologyTitle{
     text-align:center;
 }
@@ -293,31 +442,54 @@ button:active{
 }
 
 .apologyTitle h1{
+
     margin:10px 0;
+
     font-family:"Cormorant Garamond",serif;
-    font-size:clamp(35px,6vw,55px);
+
+    font-size:
+        clamp(35px,6vw,55px);
 }
 
 .apologyTitle p{
     font-style:italic;
 }
 
+
+/* ================= ORNAMENT ================= */
+
 .ornament{
+
     text-align:center;
+
     font-size:28px;
+
     margin:25px 0;
 }
 
+
+/* ================= APOLOGY CONTENT ================= */
+
 .apologyLayout{
+
     display:grid;
-    grid-template-columns:1.25fr .75fr;
+
+    grid-template-columns:
+        1.25fr .75fr;
+
     gap:35px;
+
     align-items:start;
 }
 
 .apologyText{
-    font-family:"Cormorant Garamond",serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size:21px;
+
     line-height:1.9;
 }
 
@@ -326,39 +498,77 @@ button:active{
 }
 
 .opening{
+
     font-size:27px;
+
     font-weight:bold;
 }
 
 .important{
+
     font-size:24px;
+
     font-weight:bold;
 }
 
 .apologySignature{
+
     text-align:right;
+
     font-size:27px;
+
     font-weight:bold;
 }
 
+
+/* =====================================================
+   APOLOGY IMAGE
+
+   The image is now a normal part of the page.
+   It will NOT block finger scrolling.
+===================================================== */
+
 .apologyArt{
-    position:sticky;
-    top:80px;
+
+    width:100%;
+
+    align-self:start;
 }
 
 .apologyArt img{
+
     display:block;
+
     width:100%;
+
+    height:auto;
+
     border:7px solid #805324;
+
     border-radius:15px;
-    box-shadow:0 12px 35px rgba(0,0,0,.5);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.5);
+
+    /* Prevent broken-image icon looking ugly */
+    background:#d8b77c;
 }
 
+
+/* No "Vintage apology scroll" text */
+
 .apologyCaption{
+
     margin-top:12px;
+
     text-align:center;
-    font-family:"Cormorant Garamond",serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size:18px;
+
     font-style:italic;
 }
 
@@ -372,22 +582,28 @@ button:active{
     }
 
     .apologyLayout{
+
         grid-template-columns:1fr;
     }
 
     .apologyArt{
+
         position:relative;
-        top:auto;
+
         order:-1;
     }
 
     .parchment{
+
         padding:55px 20px;
+
         border-width:7px;
     }
 
     .apologyText{
-        font-size:19px;
+
+        font-size:20px;
+
         line-height:1.85;
     }
 
@@ -396,26 +612,92 @@ button:active{
     }
 
     .apologyControls{
+
         right:6px;
         bottom:6px;
     }
 
+    .apologyControls button{
+
+        font-size:12px;
+
+        padding:9px 11px;
+    }
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media(max-width:500px){
+
+    .header{
+        font-size:25px;
+    }
+
+    .navigation{
+        padding-top:85px;
+    }
+
+    .parchment{
+
+        padding-left:17px;
+        padding-right:17px;
+
+        border-width:6px;
+    }
+
+    .apologyTitle h1{
+
+        font-size:38px;
+    }
+
+    .apologyText{
+
+        font-size:19px;
+
+        line-height:1.85;
+    }
+
+    .apologyText p{
+
+        margin-bottom:28px;
+    }
+
+    .apologyControls{
+
+        left:8px;
+        right:8px;
+
+        justify-content:center;
+    }
+
+    .apologyControls button{
+
+        font-size:11px;
+
+        padding:9px 10px;
+    }
 }
 
 </style>
 </head>
 
+
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <div class="header">
     🌸 Canvas of Us 🌸
 </div>
 
 
-<!-- ================= LOGIN ================= -->
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
 <div id="lock" class="lock">
 
@@ -433,7 +715,9 @@ button:active{
 
         <br><br>
 
-        <button id="unlockButton" type="button">
+        <button
+            id="unlockButton"
+            type="button">
             Unlock 💌
         </button>
 
@@ -444,30 +728,47 @@ button:active{
 </div>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div id="main" class="hidden">
+
 
     <!-- NAVIGATION -->
 
     <div class="navigation">
 
-        <button id="memoriesButton" type="button">
+        <button
+            id="memoriesButton"
+            type="button">
+
             🌸 Memories
+
         </button>
 
-        <button id="apologyButton" type="button">
+
+        <button
+            id="apologyButton"
+            type="button">
+
             💌 Apology
+
         </button>
 
     </div>
 
 
-    <!-- ================= MEMORIES ================= -->
+    <!-- =================================================
+         MEMORIES PAGE
+    ================================================== -->
 
     <div id="memoriesPage">
 
         <div class="main">
+
+
+            <!-- LEFT -->
 
             <div class="left">
 
@@ -484,42 +785,60 @@ button:active{
 
                 <div class="gallery">
 
-                    <img src="photos/1.png"
-                         onclick="openImg(0)"
-                         alt="Memory 1">
+                    <img
+                        src="photos/1.png"
+                        onclick="openImg(0)"
+                        alt="Memory 1"
+                    >
 
-                    <img src="photos/2.png"
-                         onclick="openImg(1)"
-                         alt="Memory 2">
+                    <img
+                        src="photos/2.png"
+                        onclick="openImg(1)"
+                        alt="Memory 2"
+                    >
 
-                    <img src="photos/3.png"
-                         onclick="openImg(2)"
-                         alt="Memory 3">
+                    <img
+                        src="photos/3.png"
+                        onclick="openImg(2)"
+                        alt="Memory 3"
+                    >
 
-                    <img src="photos/4.png"
-                         onclick="openImg(3)"
-                         alt="Memory 4">
+                    <img
+                        src="photos/4.png"
+                        onclick="openImg(3)"
+                        alt="Memory 4"
+                    >
 
-                    <img src="photos/5.png"
-                         onclick="openImg(4)"
-                         alt="Memory 5">
+                    <img
+                        src="photos/5.png"
+                        onclick="openImg(4)"
+                        alt="Memory 5"
+                    >
 
-                    <img src="photos/6.png"
-                         onclick="openImg(5)"
-                         alt="Memory 6">
+                    <img
+                        src="photos/6.png"
+                        onclick="openImg(5)"
+                        alt="Memory 6"
+                    >
 
-                    <img src="photos/7.png"
-                         onclick="openImg(6)"
-                         alt="Memory 7">
+                    <img
+                        src="photos/7.png"
+                        onclick="openImg(6)"
+                        alt="Memory 7"
+                    >
 
-                    <img src="photos/8.png"
-                         onclick="openImg(7)"
-                         alt="Memory 8">
+                    <img
+                        src="photos/8.png"
+                        onclick="openImg(7)"
+                        alt="Memory 8"
+                    >
 
                 </div>
 
             </div>
 
+
+            <!-- RIGHT -->
 
             <div class="right">
 
@@ -527,10 +846,11 @@ button:active{
 
                     💛 My love,<br><br>
 
-                    Maji Eshwari, shrav tuja sathi hamasha aahe gaa
-                    tujya premat... tujaa sathi...
-                    aple saglee changle diwass...
-                    apli masti apli... saglee kahii...
+                    Maji Eshwari, shrav tuja sathi
+                    hamasha aahe gaa tujya premat...
+                    tujaa sathi... aple saglee changle
+                    diwass... apli masti apli...
+                    saglee kahii...
 
                     <br><br>
 
@@ -540,8 +860,9 @@ button:active{
 
                     <br><br>
 
-                    Ya madhe aple most of the changle divas
-                    recreate kele aahee manjee samju shakshil tuu...
+                    Ya madhe aple most of the changle
+                    divas recreate kele aahee
+                    manjee samju shakshil tuu...
 
                     <br><br>
 
@@ -549,8 +870,12 @@ button:active{
 
                     <br><br>
 
-                    <button id="secretButton" type="button">
+                    <button
+                        id="secretButton"
+                        type="button">
+
                         Secret 💌
+
                     </button>
 
                 </div>
@@ -564,7 +889,9 @@ button:active{
 </div>
 
 
-<!-- ================= SECRET ================= -->
+<!-- =====================================================
+     SECRET
+===================================================== -->
 
 <div id="secret" class="secretPage">
 
@@ -598,8 +925,12 @@ button:active{
 
         <br><br>
 
-        <button id="closeSecretButton" type="button">
+        <button
+            id="closeSecretButton"
+            type="button">
+
             Close
+
         </button>
 
     </div>
@@ -607,40 +938,73 @@ button:active{
 </div>
 
 
-<!-- ================= APOLOGY ================= -->
+<!-- =====================================================
+     APOLOGY PAGE
+===================================================== -->
 
 <div id="apologyPage">
 
-    <div id="apologyProgress" class="apologyProgress"></div>
 
+    <div
+        id="apologyProgress"
+        class="apologyProgress">
+    </div>
+
+
+    <!-- CONTROLS -->
 
     <div class="apologyControls">
 
-        <button id="autoButton" type="button">
-            ⏸ Pause
+        <button
+            id="autoButton"
+            type="button">
+
+            ▶️ Auto
+
         </button>
 
-        <button id="restartButton" type="button">
+
+        <button
+            id="restartButton"
+            type="button">
+
             🔄 Restart
+
         </button>
 
-        <button id="topButton" type="button">
+
+        <button
+            id="topButton"
+            type="button">
+
             ⬆️ Top
+
         </button>
 
-        <button id="backButton" type="button">
+
+        <button
+            id="backButton"
+            type="button">
+
             🌸 Memories
+
         </button>
 
     </div>
 
 
+    <!-- PARCHMENT -->
+
     <div class="parchment">
 
 
+        <!-- TITLE -->
+
         <div class="apologyTitle">
 
-            <div class="bigEmoji">💌</div>
+            <div class="bigEmoji">
+                💌
+            </div>
 
             <h1>
                 A Letter From My Heart
@@ -659,16 +1023,20 @@ button:active{
         </div>
 
 
+        <!-- CONTENT -->
+
         <div class="apologyLayout">
 
 
-            <!-- ================= APOLOGY TEXT ================= -->
+            <!-- TEXT -->
 
             <div class="apologyText">
+
 
                 <p class="opening">
                     Hi Eshwari 👋❤️
                 </p>
+
 
                 <p>
                     Mee aahe...
@@ -677,11 +1045,13 @@ button:active{
                     🥺💔
                 </p>
 
+
                 <p>
                     He changla format nahi aahe bolna sathi,
                     pn I tried to be creative and
                     a some special space for you... ✨💌
                 </p>
+
 
                 <p>
                     Kahi divsa purvi khup kahi gosti ghadle
@@ -690,15 +1060,18 @@ button:active{
                     Kiva dhakavla kahi what I really meant...
                 </p>
 
+
                 <p>
                     Pn mee kharach kahi khup sundar banavla aahe
                     tuja sathi. 🥹❤️
                 </p>
 
+
                 <p>
                     I really want to see your reaction
                     after looking at it. ✨
                 </p>
+
 
                 <p>
                     Adhi maja asa kahi plan navta...
@@ -706,11 +1079,13 @@ button:active{
                     karayacha ani maja reaction bhagayacha. 🥺
                 </p>
 
+
                 <p>
                     Khara tar he reason nahi...
-                    pn mala tuja chera lavkarat lavkar bhagayacha aahe
-                    manun aasha kahi aahe. ❤️
+                    pn mala tuja chera lavkarat lavkar
+                    bhagayacha aahe manun aasha kahi aahe. ❤️
                 </p>
+
 
                 <p>
                     Mahine jalet tuja chera bhagitla mee dhad...
@@ -718,9 +1093,11 @@ button:active{
                     pn bas bhagayacha ahe tuja chera... 🥺❤️
                 </p>
 
+
                 <div class="ornament">
                     ❦ ✦ ❦
                 </div>
+
 
                 <p>
                     Hee me je kahi lihat aahe
@@ -728,9 +1105,11 @@ button:active{
                     ani if conclude tar makchya sathi pn instinct...
                 </p>
 
+
                 <p>
                     Pn tya sathi me kahi special tayar kela aahe... ✨
                 </p>
+
 
                 <p>
                     Apan likee khup kahi special banlo aahot
@@ -738,11 +1117,13 @@ button:active{
                     savai jalo aahot. ❤️
                 </p>
 
+
                 <p>
                     Jasa bolaya shavai kahibkelya shiavai
                     rahavalya nahi jaat...
                     kahi asa ghadla nahi kee adhura watat...
                 </p>
+
 
                 <p>
                     Khup kami velat he sagla ghadla
@@ -751,24 +1132,29 @@ button:active{
                     je apan sangitla nahi...
                 </p>
 
+
                 <p>
                     Swata peksha apan ek mekana olakto...
                     .................. 🥺
                 </p>
 
+
                 <div class="ornament">
                     ❦ ───── ❤️ ───── ❦
                 </div>
+
 
                 <p class="important">
                     ESHWARI...
                     rajya tula mahii hee sagla karunn...
                 </p>
 
+
                 <p>
                     It's just hurting more and more.
                     Mee he Majya badhal bolata ahe...
                 </p>
+
 
                 <p>
                     Jya chuka me kele aaht asa nahi ke tu bolte manun,
@@ -777,6 +1163,7 @@ button:active{
                     mee hamasha tya saglayane sathi sharminda aahe.
                 </p>
 
+
                 <p>
                     I can just really express,
                     or say it out...
@@ -784,16 +1171,19 @@ button:active{
                     cutting through my ever part...
                 </p>
 
+
                 <p>
                     Nahi sadyanmala te tula lakyshat Gheun dayacha...
                     pnn mee sharminda aahe.
                     Can just not define it... 😔💔
                 </p>
 
+
                 <p>
                     Ani parat ya char divsat suddhaa
                     ajun avsd kela aahe me.
                 </p>
+
 
                 <p>
                     Kahi gostya ahe bolle
@@ -801,501 +1191,11 @@ button:active{
                     even though majak...
                 </p>
 
+
                 <p>
                     Kahi gostya ashye keli
                     jee kadich karayala nako hotaa...
                 </p>
 
-                <p>
-                    Kahi kama nahit kalel
-                    jee mahi saglat adhi karayala hava hota...
-                </p>
 
-                <p class="important">
-                    Anii the freaking thing which I went on doing...
-                </p>
-
-                <p>
-                    Anii kharach mafi havi mala
-                    kahi gosti tula satat bolun dhakavna sathi
-                    jayane tula rash hotaa...
-                </p>
-
-                <p>
-                    I am not getting it soooooo...
-                </p>
-
-                <p class="important">
-                    I am really sorry. 🙏🥺💔
-                </p>
-
-                <div class="ornament">
-                    ❦ ♥ ❦
-                </div>
-
-                <p class="apologySignature">
-                    I am Sarvadnya<br>
-                    💌
-                </p>
-
-            </div>
-
-
-            <!-- ================= APOLOGY IMAGE ================= -->
-
-            <div class="apologyArt">
-
-                <img
-                    src="apologies/apology-scroll.png"
-                    alt="Vintage apology scroll"
-                >
-
-                <div class="apologyCaption">
-                    "Some feelings are easier to write than to say." 🕯️
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="ornament">
-            ❦ ───────── ♥ ───────── ❦
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-/* ================= PASSWORD ================= */
-
-const SITE_PASSWORD = "170123";
-
-
-/* ================= ELEMENTS ================= */
-
-const lockPage = document.getElementById("lock");
-const mainPage = document.getElementById("main");
-const passwordInput = document.getElementById("pass");
-const unlockButton = document.getElementById("unlockButton");
-const loginError = document.getElementById("loginError");
-
-const memoriesPage = document.getElementById("memoriesPage");
-const apologyPage = document.getElementById("apologyPage");
-
-const secretPage = document.getElementById("secret");
-
-const slide = document.getElementById("slide");
-
-
-/* ================= LOGIN ================= */
-
-function login(){
-
-    const enteredPassword =
-        passwordInput.value.trim();
-
-    if(enteredPassword === SITE_PASSWORD){
-
-        lockPage.style.display = "none";
-
-        mainPage.classList.remove("hidden");
-
-        memoriesPage.style.display = "block";
-
-        apologyPage.style.display = "none";
-
-        loginError.textContent = "";
-
-        currentImage = 0;
-
-        showImage();
-
-        window.scrollTo(0,0);
-
-    }else{
-
-        loginError.textContent =
-            "Wrong code 💔";
-
-        passwordInput.value = "";
-
-        passwordInput.focus();
-
-    }
-
-}
-
-
-/* LOGIN BUTTON */
-
-unlockButton.addEventListener(
-    "click",
-    login
-);
-
-
-/* ENTER KEY */
-
-passwordInput.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Enter"){
-
-            login();
-
-        }
-
-    }
-);
-
-
-/* ================= PHOTOS ================= */
-
-const images = [
-    "photos/1.png",
-    "photos/2.png",
-    "photos/3.png",
-    "photos/4.png",
-    "photos/5.png",
-    "photos/6.png",
-    "photos/7.png",
-    "photos/8.png"
-];
-
-let currentImage = 0;
-
-
-/* SHOW IMAGE */
-
-function showImage(){
-
-    slide.src = images[currentImage];
-
-}
-
-
-/* OPEN IMAGE */
-
-function openImg(index){
-
-    if(index >= 0 && index < images.length){
-
-        currentImage = index;
-
-        showImage();
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    }
-
-}
-
-
-/* AUTOMATIC SLIDESHOW */
-
-setInterval(function(){
-
-    if(
-        !mainPage.classList.contains("hidden") &&
-        apologyPage.style.display !== "block"
-    ){
-
-        currentImage++;
-
-        if(currentImage >= images.length){
-
-            currentImage = 0;
-
-        }
-
-        showImage();
-
-    }
-
-},5000);
-
-
-/* ================= MEMORIES BUTTON ================= */
-
-document.getElementById("memoriesButton")
-.addEventListener("click",function(){
-
-    memoriesPage.style.display = "block";
-
-    apologyPage.style.display = "none";
-
-    stopApologyScroll();
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-
-/* ================= APOLOGY BUTTON ================= */
-
-document.getElementById("apologyButton")
-.addEventListener("click",function(){
-
-    memoriesPage.style.display = "none";
-
-    apologyPage.style.display = "block";
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-    setTimeout(function(){
-
-        startApologyScroll();
-
-    },400);
-
-});
-
-
-/* ================= SECRET ================= */
-
-document.getElementById("secretButton")
-.addEventListener("click",function(){
-
-    secretPage.style.display = "flex";
-
-});
-
-
-document.getElementById("closeSecretButton")
-.addEventListener("click",function(){
-
-    secretPage.style.display = "none";
-
-});
-
-
-/* ================= APOLOGY AUTO SCROLL ================= */
-
-let autoScroll = true;
-
-let scrollSpeed = 0.35;
-
-let scrollAnimation = null;
-
-
-function startApologyScroll(){
-
-    stopApologyScroll();
-
-    if(!autoScroll){
-
-        return;
-
-    }
-
-    function scroll(){
-
-        if(
-            apologyPage.style.display === "block" &&
-            autoScroll
-        ){
-
-            const maxScroll =
-                document.documentElement.scrollHeight -
-                window.innerHeight;
-
-            if(window.scrollY < maxScroll){
-
-                window.scrollBy(0,scrollSpeed);
-
-                updateProgress();
-
-                scrollAnimation =
-                    requestAnimationFrame(scroll);
-
-            }else{
-
-                autoScroll = false;
-
-                document.getElementById("autoButton")
-                    .textContent = "▶️ Play";
-
-                updateProgress();
-
-            }
-
-        }
-
-    }
-
-    scrollAnimation =
-        requestAnimationFrame(scroll);
-
-}
-
-
-function stopApologyScroll(){
-
-    if(scrollAnimation){
-
-        cancelAnimationFrame(scrollAnimation);
-
-        scrollAnimation = null;
-
-    }
-
-}
-
-
-/* ================= AUTO BUTTON ================= */
-
-document.getElementById("autoButton")
-.addEventListener("click",function(){
-
-    autoScroll = !autoScroll;
-
-    if(autoScroll){
-
-        this.textContent = "⏸ Pause";
-
-        startApologyScroll();
-
-    }else{
-
-        this.textContent = "▶️ Play";
-
-        stopApologyScroll();
-
-    }
-
-});
-
-
-/* ================= RESTART ================= */
-
-document.getElementById("restartButton")
-.addEventListener("click",function(){
-
-    autoScroll = true;
-
-    document.getElementById("autoButton")
-        .textContent = "⏸ Pause";
-
-    stopApologyScroll();
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-    setTimeout(function(){
-
-        startApologyScroll();
-
-    },600);
-
-});
-
-
-/* ================= TOP ================= */
-
-document.getElementById("topButton")
-.addEventListener("click",function(){
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-
-/* ================= BACK TO MEMORIES ================= */
-
-document.getElementById("backButton")
-.addEventListener("click",function(){
-
-    apologyPage.style.display = "none";
-
-    memoriesPage.style.display = "block";
-
-    stopApologyScroll();
-
-    autoScroll = true;
-
-    document.getElementById("autoButton")
-        .textContent = "⏸ Pause";
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-
-/* ================= PROGRESS BAR ================= */
-
-function updateProgress(){
-
-    const scrollTop =
-        window.scrollY;
-
-    const documentHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    let percentage = 0;
-
-    if(documentHeight > 0){
-
-        percentage =
-            (scrollTop / documentHeight) * 100;
-
-    }
-
-    document.getElementById(
-        "apologyProgress"
-    ).style.width =
-        percentage + "%";
-
-}
-
-
-/* ================= SCROLL LISTENER ================= */
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(
-            apologyPage.style.display === "block"
-        ){
-
-            updateProgress();
-
-        }
-
-    }
-);
-
-
-/* ================= INITIAL IMAGE ================= */
-
-showImage();
-
-</script>
-
-</body>
-</html>
+       
