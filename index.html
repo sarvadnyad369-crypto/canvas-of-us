@@ -1,21 +1,15 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0,
-               maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Canvas of Us 🌸</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
 
 *{
     box-sizing:border-box;
@@ -27,10 +21,10 @@ html{
 
 body{
     margin:0;
-    background:linear-gradient(135deg,#F8F3E8,#fffaf2);
-    color:#4a3825;
-    font-family:Poppins,sans-serif;
     overflow-x:hidden;
+    font-family:Poppins,sans-serif;
+    color:#4a3825;
+    background:linear-gradient(135deg,#F8F3E8,#fffaf2);
 }
 
 button{
@@ -53,9 +47,9 @@ button:active{
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header{
     position:fixed;
@@ -64,52 +58,39 @@ button:active{
     width:100%;
     padding:14px 10px;
     text-align:center;
-
     font-family:"Cormorant Garamond",serif;
     font-size:30px;
-
     color:#C8A96B;
-
     background:rgba(255,255,255,.88);
     backdrop-filter:blur(10px);
-
     z-index:1000;
 }
 
 
-/* =========================
+/* =====================================================
    LOGIN
-========================= */
+===================================================== */
 
 .lock{
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     padding:20px;
 }
 
 .loginBox{
     width:100%;
     max-width:360px;
-
     padding:38px 25px;
-
     text-align:center;
-
     background:rgba(255,255,255,.86);
-
     border-radius:28px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.12);
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
 .loginBox h2{
     margin-top:0;
-
     font-family:"Cormorant Garamond",serif;
     font-size:34px;
 }
@@ -117,14 +98,10 @@ button:active{
 #pass{
     width:230px;
     max-width:100%;
-
     padding:14px;
-
     border:1px solid #ddd;
     border-radius:12px;
-
     outline:none;
-
     text-align:center;
     font-size:18px;
 }
@@ -132,40 +109,109 @@ button:active{
 #loginError{
     min-height:22px;
     margin-top:12px;
-
     color:#a33;
     font-size:14px;
 }
 
 
-/* =========================
+/* =====================================================
+   FOLDER MENU
+===================================================== */
+
+#folderMenu{
+    min-height:100vh;
+    padding:120px 20px 50px;
+    text-align:center;
+}
+
+.folderTitle{
+    margin-bottom:35px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(32px,8vw,50px);
+    color:#6a4b28;
+}
+
+.folderSubtitle{
+    margin-top:-20px;
+    margin-bottom:35px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:21px;
+    color:#80633f;
+}
+
+.folderContainer{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.folder{
+    width:260px;
+    min-height:210px;
+    padding:30px 20px;
+    border-radius:22px;
+    border:2px solid rgba(200,169,107,.45);
+    background:rgba(255,255,255,.7);
+    box-shadow:0 12px 35px rgba(0,0,0,.10);
+    transition:transform .2s,box-shadow .2s;
+    cursor:pointer;
+}
+
+.folder:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.folder:active{
+    transform:scale(.97);
+}
+
+.folderIcon{
+    font-size:70px;
+    margin-bottom:10px;
+}
+
+.folderName{
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    font-weight:600;
+    color:#654622;
+}
+
+.folderDescription{
+    margin-top:8px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:18px;
+    color:#80633f;
+}
+
+
+/* =====================================================
    NAVIGATION
-========================= */
+===================================================== */
 
 .navigation{
     padding:95px 15px 15px;
-
     display:flex;
     justify-content:center;
     gap:10px;
-
     flex-wrap:wrap;
 }
 
 
-/* =========================
+/* =====================================================
    MEMORIES
-========================= */
+===================================================== */
 
 .main{
     max-width:1200px;
     margin:auto;
-
     padding:20px;
-
     display:grid;
     grid-template-columns:1.2fr 1fr;
-
     gap:30px;
 }
 
@@ -182,37 +228,26 @@ button:active{
 
 .slideshow img{
     display:block;
-
     width:100%;
     aspect-ratio:4/3;
-
     object-fit:cover;
-
     border-radius:18px;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.15);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
 .gallery{
     display:flex;
     flex-wrap:wrap;
-
     justify-content:center;
-
     gap:10px;
-
     margin-top:15px;
 }
 
 .gallery img{
     width:75px;
     height:75px;
-
     object-fit:cover;
-
     border-radius:10px;
-
     cursor:pointer;
 }
 
@@ -223,77 +258,53 @@ button:active{
 
 .scrollNote{
     width:100%;
-
     padding:30px;
-
     background:rgba(255,255,255,.6);
-
     backdrop-filter:blur(12px);
-
     border-radius:20px;
-
     font-family:"Cormorant Garamond",serif;
-
     font-size:20px;
-
     line-height:1.75;
 }
 
 
-/* =========================
+/* =====================================================
    SECRET
-========================= */
+===================================================== */
 
 .secretPage{
     display:none;
-
     position:fixed;
     inset:0;
-
     z-index:2000;
-
     background:rgba(255,250,240,.97);
-
     justify-content:center;
     align-items:center;
-
     padding:20px;
 }
 
 .paper{
     width:100%;
     max-width:550px;
-
     padding:35px;
-
     background:white;
-
     border-radius:20px;
-
     text-align:center;
-
     font-family:"Cormorant Garamond",serif;
-
     font-size:20px;
-
     line-height:1.7;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.2);
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
 }
 
 
-/* =================================================
+/* =====================================================
    APOLOGY PAGE
-================================================= */
+===================================================== */
 
 #apologyPage{
     display:none;
-
     min-height:100vh;
-
     padding:100px 15px 100px;
-
     background:
         radial-gradient(
             circle at top,
@@ -301,73 +312,46 @@ button:active{
             #28180e 65%,
             #100a06
         );
-
     color:#3b2414;
 }
 
-
-/* =========================
-   PROGRESS BAR
-========================= */
-
 .apologyProgress{
     position:fixed;
-
     top:0;
     left:0;
-
     height:5px;
     width:0;
-
     background:#e4bd76;
-
     z-index:3000;
 }
 
-
-/* =========================
-   CONTROLS
-========================= */
-
 .apologyControls{
     position:fixed;
-
     right:10px;
     bottom:10px;
-
     z-index:2500;
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:6px;
-
     justify-content:flex-end;
 }
 
 .apologyControls button{
     padding:9px 12px;
-
     background:#633b1c;
-
     font-size:12px;
 }
 
 
-/* =========================
+/* =====================================================
    PARCHMENT
-========================= */
+===================================================== */
 
 .parchment{
     position:relative;
-
     max-width:1100px;
-
     margin:auto;
-
     padding:55px;
-
     background:
         radial-gradient(
             circle at 15% 15%,
@@ -380,43 +364,28 @@ button:active{
             transparent 30%
         ),
         #d8b77c;
-
     border:10px solid #95652f;
-
     border-radius:25px;
-
     box-shadow:
         0 25px 70px rgba(0,0,0,.65),
         inset 0 0 45px rgba(78,40,12,.35);
 }
 
-
-/* OLD ROLLER LOOK */
-
 .parchment:before,
 .parchment:after{
     content:"";
-
     position:absolute;
-
     left:-25px;
     right:-25px;
-
     height:45px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #70471f,
-            #c59658,
-            #8a5a28
-        );
-
+    background:linear-gradient(
+        to bottom,
+        #70471f,
+        #c59658,
+        #8a5a28
+    );
     border-radius:50%;
-
-    box-shadow:
-        0 5px 12px rgba(0,0,0,.4);
-
+    box-shadow:0 5px 12px rgba(0,0,0,.4);
     pointer-events:none;
 }
 
@@ -429,9 +398,9 @@ button:active{
 }
 
 
-/* =========================
-   TITLE
-========================= */
+/* =====================================================
+   APOLOGY TITLE
+===================================================== */
 
 .apologyTitle{
     text-align:center;
@@ -443,79 +412,31 @@ button:active{
 
 .apologyTitle h1{
     margin:10px 0;
-
     font-family:"Cormorant Garamond",serif;
-
     font-size:clamp(35px,6vw,55px);
 }
 
 .apologyTitle p{
     font-style:italic;
-
     font-size:20px;
 }
 
-
-/* =========================
-   IMAGE
-========================= */
-
-.apologyImageBox{
-    width:100%;
-
-    max-width:620px;
-
-    margin:30px auto 40px;
-
-    text-align:center;
-}
-
-.apologyImageBox img{
-    display:block;
-
-    width:100%;
-
-    max-height:520px;
-
-    object-fit:contain;
-
-    border:7px solid #805324;
-
-    border-radius:15px;
-
-    background:#d8b77c;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.5);
-}
-
-
-/* =========================
-   ORNAMENT
-========================= */
-
 .ornament{
     text-align:center;
-
     font-size:28px;
-
     margin:25px 0;
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* =====================================================
+   APOLOGY TEXT
+===================================================== */
 
 .apologyText{
     max-width:850px;
-
     margin:auto;
-
     font-family:"Cormorant Garamond",serif;
-
     font-size:22px;
-
     line-height:1.9;
 }
 
@@ -525,28 +446,130 @@ button:active{
 
 .opening{
     font-size:29px;
-
     font-weight:bold;
 }
 
 .important{
     font-size:25px;
-
     font-weight:bold;
 }
 
 .apologySignature{
     text-align:right;
-
     font-size:28px;
-
     font-weight:bold;
 }
 
 
-/* =========================
+/* =====================================================
+   SURPRISE
+===================================================== */
+
+.surprise{
+    width:100%;
+    max-width:650px;
+    margin:40px auto 35px;
+    text-align:center;
+}
+
+.surpriseText{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(23px,5vw,31px);
+    font-weight:600;
+    animation:surpriseBlink 1.6s ease-in-out infinite;
+}
+
+.surpriseArrow{
+    font-size:38px;
+    margin:10px 0 18px;
+    animation:arrowBounce 1s ease-in-out infinite;
+}
+
+.surprise audio{
+    display:block;
+    width:100%;
+    max-width:550px;
+    margin:0 auto;
+}
+
+.surpriseCaption{
+    font-family:"Cormorant Garamond",serif;
+    font-size:20px;
+    font-style:italic;
+    margin-top:15px;
+}
+
+@keyframes surpriseBlink{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.35;
+    }
+
+}
+
+@keyframes arrowBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(8px);
+    }
+
+}
+
+
+/* =====================================================
+   APOLOGY IMAGE
+===================================================== */
+
+.apologyImageBox{
+    display:block;
+    width:100%;
+    max-width:700px;
+    margin:40px auto 30px;
+    text-align:center;
+}
+
+.apologyImageBox img{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+
+    width:100%;
+    max-width:700px;
+    height:auto;
+    max-height:700px;
+
+    object-fit:contain;
+
+    margin:0 auto;
+
+    border:7px solid #805324;
+    border-radius:15px;
+
+    background:#d8b77c;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.5);
+}
+
+.apologyCaption{
+    margin-top:15px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:20px;
+    font-style:italic;
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:900px){
 
@@ -568,26 +591,16 @@ button:active{
         font-size:23px;
     }
 
+    .folder{
+        width:280px;
+    }
+
     .apologyControls{
         right:6px;
         bottom:6px;
     }
 
-    .apologyControls button{
-        padding:9px 11px;
-        font-size:12px;
-    }
-
-    .apologyImageBox{
-        margin-top:20px;
-    }
-
 }
-
-
-/* =========================
-   VERY SMALL PHONES
-========================= */
 
 @media(max-width:430px){
 
@@ -595,16 +608,24 @@ button:active{
         font-size:27px;
     }
 
+    .folder{
+        width:100%;
+        max-width:330px;
+    }
+
     .apologyControls{
         left:6px;
         right:6px;
-
         justify-content:center;
     }
 
     .apologyControls button{
         flex:1;
         min-width:70px;
+    }
+
+    .apologyImageBox img{
+        max-height:none;
     }
 
 }
@@ -616,18 +637,18 @@ button:active{
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <div class="header">
     🌸 Canvas of Us 🌸
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      LOGIN
-========================= -->
+===================================================== -->
 
 <div id="lock" class="lock">
 
@@ -656,127 +677,170 @@ button:active{
 </div>
 
 
-<!-- =========================
-     MAIN
-========================= -->
+<!-- =====================================================
+     FOLDER MENU
+===================================================== -->
 
-<div id="main" class="hidden">
+<div id="folderMenu" class="hidden">
+
+    <div class="folderTitle">
+        🌸 Canvas of Us 🌸
+    </div>
+
+    <div class="folderSubtitle">
+        Choose a place to explore 💌
+    </div>
+
+    <div class="folderContainer">
+
+        <div class="folder" id="memoriesFolder">
+
+            <div class="folderIcon">
+                🌸
+            </div>
+
+            <div class="folderName">
+                Memories
+            </div>
+
+            <div class="folderDescription">
+                Our moments together 💛
+            </div>
+
+        </div>
 
 
-    <!-- NAVIGATION -->
+        <div class="folder" id="apologyFolder">
+
+            <div class="folderIcon">
+                💌
+            </div>
+
+            <div class="folderName">
+                Apologies
+            </div>
+
+            <div class="folderDescription">
+                Something I wanted to say ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<div id="memoriesPage" class="hidden">
 
     <div class="navigation">
 
-        <button id="memoriesButton" type="button">
-            🌸 Memories
+        <button id="memoriesBackButton">
+            📁 Folders
         </button>
 
-        <button id="apologyButton" type="button">
+        <button id="apologyFromMemories">
             💌 Apology
         </button>
 
     </div>
 
 
-    <!-- =========================
-         MEMORIES PAGE
-    ========================= -->
+    <div class="main">
 
-    <div id="memoriesPage">
+        <div class="left">
 
-        <div class="main">
+            <div class="slideshow">
 
-
-            <div class="left">
-
-                <div class="slideshow">
-
-                    <img
-                        id="slide"
-                        src="photos/1.png"
-                        alt="Memory"
-                    >
-
-                </div>
-
-
-                <div class="gallery">
-
-                    <img src="photos/1.png"
-                         onclick="openImg(0)"
-                         alt="Memory 1">
-
-                    <img src="photos/2.png"
-                         onclick="openImg(1)"
-                         alt="Memory 2">
-
-                    <img src="photos/3.png"
-                         onclick="openImg(2)"
-                         alt="Memory 3">
-
-                    <img src="photos/4.png"
-                         onclick="openImg(3)"
-                         alt="Memory 4">
-
-                    <img src="photos/5.png"
-                         onclick="openImg(4)"
-                         alt="Memory 5">
-
-                    <img src="photos/6.png"
-                         onclick="openImg(5)"
-                         alt="Memory 6">
-
-                    <img src="photos/7.png"
-                         onclick="openImg(6)"
-                         alt="Memory 7">
-
-                    <img src="photos/8.png"
-                         onclick="openImg(7)"
-                         alt="Memory 8">
-
-                </div>
+                <img
+                    id="slide"
+                    src="photos/1.png"
+                    alt="Memory"
+                >
 
             </div>
 
 
-            <div class="right">
+            <div class="gallery">
 
-                <div class="scrollNote">
+                <img src="photos/1.png"
+                     onclick="openImg(0)"
+                     alt="Memory 1">
 
-                    💛 My love,<br><br>
+                <img src="photos/2.png"
+                     onclick="openImg(1)"
+                     alt="Memory 2">
 
-                    Maji Eshwari, shrav tuja sathi
-                    hamasha aahe gaa tujya premat...
-                    tujaa sathi...
+                <img src="photos/3.png"
+                     onclick="openImg(2)"
+                     alt="Memory 3">
 
-                    <br><br>
+                <img src="photos/4.png"
+                     onclick="openImg(3)"
+                     alt="Memory 4">
 
-                    Aple saglee changle diwass...
-                    apli masti apli...
-                    saglee kahii...
+                <img src="photos/5.png"
+                     onclick="openImg(4)"
+                     alt="Memory 5">
 
-                    <br><br>
+                <img src="photos/6.png"
+                     onclick="openImg(5)"
+                     alt="Memory 6">
 
-                    Ranu thankyou very much
-                    hamasha maja sathi rahana sathii.
-                    💛
+                <img src="photos/7.png"
+                     onclick="openImg(6)"
+                     alt="Memory 7">
 
-                    <br><br>
+                <img src="photos/8.png"
+                     onclick="openImg(7)"
+                     alt="Memory 8">
 
-                    Ya madhe aple most of the changle divas
-                    recreate kele aahee manjee samju shakshil tuu...
+            </div>
 
-                    <br><br>
+        </div>
 
-                    I hopee tula he avdel. 💖
 
-                    <br><br>
+        <div class="right">
 
-                    <button id="secretButton" type="button">
-                        Secret 💌
-                    </button>
+            <div class="scrollNote">
 
-                </div>
+                💛 My love,<br><br>
+
+                Maji Eshwari,
+                shrav tuja sathi hamasha aahe gaa
+                tujya premat...
+                tujaa sathi...
+
+                <br><br>
+
+                Aple saglee changle diwass...
+                apli masti apli...
+                saglee kahii...
+
+                <br><br>
+
+                Ranu thankyou very much
+                hamasha maja sathi rahana sathii.
+                💛
+
+                <br><br>
+
+                Ya madhe aple most of the changle divas
+                recreate kele aahee manjee samju shakshil tuu...
+
+                <br><br>
+
+                I hopee tula he avdel. 💖
+
+                <br><br>
+
+                <button id="secretButton">
+                    Secret 💌
+                </button>
 
             </div>
 
@@ -787,9 +851,9 @@ button:active{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      SECRET
-========================= -->
+===================================================== -->
 
 <div id="secret" class="secretPage">
 
@@ -823,7 +887,7 @@ button:active{
 
         <br><br>
 
-        <button id="closeSecretButton" type="button">
+        <button id="closeSecretButton">
             Close
         </button>
 
@@ -832,9 +896,9 @@ button:active{
 </div>
 
 
-<!-- =================================================
-     APOLOGY PAGE
-================================================= -->
+<!-- =====================================================
+     APOLOGY
+===================================================== -->
 
 <div id="apologyPage">
 
@@ -843,30 +907,26 @@ button:active{
     </div>
 
 
-    <!-- CONTROLS -->
-
     <div class="apologyControls">
 
-        <button id="autoButton" type="button">
+        <button id="autoButton">
             ⏸ Pause
         </button>
 
-        <button id="restartButton" type="button">
+        <button id="restartButton">
             🔄 Restart
         </button>
 
-        <button id="topButton" type="button">
+        <button id="topButton">
             ⬆️ Top
         </button>
 
-        <button id="backButton" type="button">
-            🌸 Memories
+        <button id="backButton">
+            📁 Folders
         </button>
 
     </div>
 
-
-    <!-- PARCHMENT -->
 
     <div class="parchment">
 
@@ -896,29 +956,7 @@ button:active{
         </div>
 
 
-        <!-- =========================
-             IMAGE
-        ========================= -->
-
-        <div class="apologyImageBox">
-
-            <img
-                src="apologies/apology-scroll.png"
-                alt=""
-                onerror="this.style.display='none';"
-            >
-
-        </div>
-
-
-        <div class="ornament">
-            ❦ ✦ ❦
-        </div>
-
-
-        <!-- =========================
-             APOLOGY TEXT
-        ========================= -->
+        <!-- APOLOGY TEXT -->
 
         <div class="apologyText">
 
@@ -1127,6 +1165,64 @@ button:active{
                 💌
             </p>
 
+        </div>
+
+
+        <!-- =================================================
+             SURPRISE FIRST
+        ================================================= -->
+
+        <div class="ornament">
+            ❦ ───────── ♥ ───────── ❦
+        </div>
+
+
+        <div class="surprise">
+
+            <div class="surpriseText">
+                ✨ Psst... there's a little surprise waiting below 👇 ✨
+            </div>
+
+            <div class="surpriseArrow">
+                👇
+            </div>
+
+            <audio controls preload="metadata">
+
+                <source
+                    src="apologies/surprise.mp3"
+                    type="audio/mpeg">
+
+                Your browser does not support audio.
+
+            </audio>
+
+            <p class="surpriseCaption">
+                🎧 A little something I wanted you to hear 💛
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             APOLOGY IMAGE AFTER MP3
+        ================================================= -->
+
+        <div class="ornament">
+            ❦ ───────── ♥ ───────── ❦
+        </div>
+
+
+        <div class="apologyImageBox">
+
+            <img
+                src="apologies/apology-scroll.png"
+                alt="Apology image"
+            >
+
+            <div class="apologyCaption">
+                Some feelings are easier to write than to say. 🕯️
+            </div>
 
         </div>
 
@@ -1157,17 +1253,8 @@ const SITE_PASSWORD = "170123";
 const lockPage =
     document.getElementById("lock");
 
-const mainPage =
-    document.getElementById("main");
-
-const passwordInput =
-    document.getElementById("pass");
-
-const unlockButton =
-    document.getElementById("unlockButton");
-
-const loginError =
-    document.getElementById("loginError");
+const folderMenu =
+    document.getElementById("folderMenu");
 
 const memoriesPage =
     document.getElementById("memoriesPage");
@@ -1175,17 +1262,24 @@ const memoriesPage =
 const apologyPage =
     document.getElementById("apologyPage");
 
-const secretPage =
-    document.getElementById("secret");
+const passwordInput =
+    document.getElementById("pass");
+
+const loginError =
+    document.getElementById("loginError");
 
 const slide =
     document.getElementById("slide");
 
 const progress =
-    document.getElementById("apologyProgress");
+    document.getElementById(
+        "apologyProgress"
+    );
 
 const autoButton =
-    document.getElementById("autoButton");
+    document.getElementById(
+        "autoButton"
+    );
 
 
 /* =====================================================
@@ -1199,24 +1293,27 @@ function login(){
 
     if(entered === SITE_PASSWORD){
 
-        lockPage.style.display = "none";
+        lockPage.style.display =
+            "none";
 
-        mainPage.classList.remove("hidden");
+        folderMenu.classList.remove(
+            "hidden"
+        );
 
-        memoriesPage.style.display = "block";
+        memoriesPage.classList.add(
+            "hidden"
+        );
 
-        apologyPage.style.display = "none";
+        apologyPage.style.display =
+            "none";
 
         loginError.textContent = "";
 
-        slide.src = "photos/1.png";
+        window.scrollTo(0,0);
 
-        window.scrollTo({
-            top:0,
-            behavior:"instant"
-        });
+    }
 
-    }else{
+    else{
 
         loginError.textContent =
             "Wrong code 💔";
@@ -1230,7 +1327,9 @@ function login(){
 }
 
 
-unlockButton.addEventListener(
+document
+.getElementById("unlockButton")
+.addEventListener(
     "click",
     login
 );
@@ -1250,6 +1349,135 @@ passwordInput.addEventListener(
 
 /* =====================================================
    MEMORIES
+===================================================== */
+
+function openMemories(){
+
+    stopAutoScroll();
+
+    folderMenu.classList.add(
+        "hidden"
+    );
+
+    apologyPage.style.display =
+        "none";
+
+    memoriesPage.classList.remove(
+        "hidden"
+    );
+
+    window.scrollTo(0,0);
+
+}
+
+
+document
+.getElementById("memoriesFolder")
+.addEventListener(
+    "click",
+    openMemories
+);
+
+
+document
+.getElementById("memoriesBackButton")
+.addEventListener(
+    "click",
+    function(){
+
+        stopAutoScroll();
+
+        memoriesPage.classList.add(
+            "hidden"
+        );
+
+        folderMenu.classList.remove(
+            "hidden"
+        );
+
+        window.scrollTo(0,0);
+
+    }
+);
+
+
+/* =====================================================
+   APOLOGY
+===================================================== */
+
+function openApology(){
+
+    memoriesPage.classList.add(
+        "hidden"
+    );
+
+    folderMenu.classList.add(
+        "hidden"
+    );
+
+    apologyPage.style.display =
+        "block";
+
+    progress.style.width =
+        "0%";
+
+    window.scrollTo(0,0);
+
+    autoScrolling = true;
+
+    animationFrame = null;
+
+    setTimeout(
+        startAutoScroll,
+        600
+    );
+
+}
+
+
+document
+.getElementById("apologyFolder")
+.addEventListener(
+    "click",
+    openApology
+);
+
+
+document
+.getElementById("apologyFromMemories")
+.addEventListener(
+    "click",
+    openApology
+);
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+document
+.getElementById("backButton")
+.addEventListener(
+    "click",
+    function(){
+
+        stopAutoScroll();
+
+        apologyPage.style.display =
+            "none";
+
+        folderMenu.classList.remove(
+            "hidden"
+        );
+
+        window.scrollTo(0,0);
+
+    }
+);
+
+
+/* =====================================================
+   PHOTOS
 ===================================================== */
 
 const images = [
@@ -1295,7 +1523,10 @@ document
     "click",
     function(){
 
-        secretPage.style.display = "flex";
+        document
+        .getElementById("secret")
+        .style.display =
+            "flex";
 
     }
 );
@@ -1307,74 +1538,10 @@ document
     "click",
     function(){
 
-        secretPage.style.display = "none";
-
-    }
-);
-
-
-/* =====================================================
-   PAGE SWITCHING
-===================================================== */
-
-document
-.getElementById("memoriesButton")
-.addEventListener(
-    "click",
-    function(){
-
-        stopAutoScroll();
-
-        apologyPage.style.display = "none";
-
-        memoriesPage.style.display = "block";
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    }
-);
-
-
-document
-.getElementById("apologyButton")
-.addEventListener(
-    "click",
-    function(){
-
-        memoriesPage.style.display = "none";
-
-        apologyPage.style.display = "block";
-
-        window.scrollTo({
-            top:0,
-            behavior:"instant"
-        });
-
-        startAutoScroll();
-
-    }
-);
-
-
-document
-.getElementById("backButton")
-.addEventListener(
-    "click",
-    function(){
-
-        stopAutoScroll();
-
-        apologyPage.style.display = "none";
-
-        memoriesPage.style.display = "block";
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+        document
+        .getElementById("secret")
+        .style.display =
+            "none";
 
     }
 );
@@ -1384,11 +1551,11 @@ document
    AUTO SCROLL
 ===================================================== */
 
-let autoScrolling = true;
-
-let scrollSpeed = 0.35;
+let autoScrolling = false;
 
 let animationFrame = null;
+
+const scrollSpeed = 0.35;
 
 
 function autoScroll(){
@@ -1422,27 +1589,28 @@ function autoScroll(){
     );
 
 
-    progress.style.width =
-        (
-            window.scrollY /
-            Math.max(maxScroll,1)
-            * 100
-        ) + "%";
+    updateProgress();
 
 
     animationFrame =
-        requestAnimationFrame(autoScroll);
+        requestAnimationFrame(
+            autoScroll
+        );
 
 }
 
 
 function startAutoScroll(){
 
-    if(autoScrolling &&
-       animationFrame === null){
+    if(
+        autoScrolling &&
+        animationFrame === null
+    ){
 
         animationFrame =
-            requestAnimationFrame(autoScroll);
+            requestAnimationFrame(
+                autoScroll
+            );
 
         autoButton.textContent =
             "⏸ Pause";
@@ -1456,6 +1624,7 @@ function stopAutoScroll(){
 
     autoScrolling = false;
 
+
     if(animationFrame !== null){
 
         cancelAnimationFrame(
@@ -1466,10 +1635,72 @@ function stopAutoScroll(){
 
     }
 
+
     autoButton.textContent =
         "▶️ Resume";
 
 }
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function updateProgress(){
+
+    if(
+        apologyPage.style.display
+        !== "block"
+    ){
+        return;
+    }
+
+
+    const maxScroll =
+        document.documentElement.scrollHeight
+        - window.innerHeight;
+
+
+    const percent =
+        (
+            window.scrollY /
+            Math.max(maxScroll,1)
+        ) * 100;
+
+
+    progress.style.width =
+        percent + "%";
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateProgress,
+    {passive:true}
+);
+
+
+/* =====================================================
+   TOUCH SCROLL
+===================================================== */
+
+window.addEventListener(
+    "touchstart",
+    function(){
+
+        if(
+            apologyPage.style.display
+            === "block"
+        ){
+
+            stopAutoScroll();
+
+        }
+
+    },
+    {passive:true}
+);
 
 
 /* =====================================================
@@ -1484,7 +1715,9 @@ autoButton.addEventListener(
 
             stopAutoScroll();
 
-        }else{
+        }
+
+        else{
 
             autoScrolling = true;
 
@@ -1493,79 +1726,6 @@ autoButton.addEventListener(
         }
 
     }
-);
-
-
-/* =====================================================
-   TOUCH / MANUAL SCROLL
-===================================================== */
-
-/*
-   IMPORTANT:
-   Touching the letter stops the automatic movement.
-   The browser then handles normal finger scrolling.
-*/
-
-window.addEventListener(
-    "touchstart",
-    function(){
-
-        if(apologyPage.style.display === "block"){
-
-            stopAutoScroll();
-
-        }
-
-    },
-    {passive:true}
-);
-
-
-/*
-   Also stop auto-scroll when the user
-   manually scrolls with the finger.
-*/
-
-let lastScrollY =
-    window.scrollY;
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(apologyPage.style.display !== "block"){
-            return;
-        }
-
-
-        const difference =
-            Math.abs(
-                window.scrollY -
-                lastScrollY
-            );
-
-
-        if(difference > 1){
-
-            progress.style.width =
-                (
-                    window.scrollY /
-                    Math.max(
-                        document.documentElement.scrollHeight
-                        - window.innerHeight,
-                        1
-                    )
-                    * 100
-                ) + "%";
-
-        }
-
-
-        lastScrollY =
-            window.scrollY;
-
-    },
-    {passive:true}
 );
 
 
@@ -1579,20 +1739,26 @@ document
     "click",
     function(){
 
+        stopAutoScroll();
+
+        progress.style.width =
+            "0%";
+
         window.scrollTo({
             top:0,
             behavior:"smooth"
         });
 
-        progress.style.width =
-            "0%";
-
-        autoScrolling = true;
-
-        animationFrame = null;
-
         setTimeout(
-            startAutoScroll,
+            function(){
+
+                autoScrolling = true;
+
+                animationFrame = null;
+
+                startAutoScroll();
+
+            },
             700
         );
 
@@ -1612,13 +1778,13 @@ document
 
         stopAutoScroll();
 
+        progress.style.width =
+            "0%";
+
         window.scrollTo({
             top:0,
             behavior:"smooth"
         });
-
-        progress.style.width =
-            "0%";
 
     }
 );
@@ -1628,12 +1794,16 @@ document
    INITIAL STATE
 ===================================================== */
 
-memoriesPage.style.display =
-    "block";
+folderMenu.classList.add(
+    "hidden"
+);
+
+memoriesPage.classList.add(
+    "hidden"
+);
 
 apologyPage.style.display =
     "none";
-
 
 </script>
 
